@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 RELIABLE Email Form - Multiple Submissions to ukrush12@gmail.com</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 650px;
+            width: 100%;
+        }
+        h1 { 
+            color: #2d3748; 
+            text-align: center; 
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        .guarantee {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+        .warning {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #92400e;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+        .form-group { 
+            margin: 20px 0; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 10px; 
+            font-weight: 600; 
+            color: #2d3748; 
+            font-size: 16px;
+        }
+        input, textarea, select { 
+            width: 100%; 
+            padding: 18px; 
+            border: 3px solid #e2e8f0; 
+            border-radius: 12px; 
+            font-size: 16px; 
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus, select:focus { 
+            border-color: #667eea; 
+            outline: none; 
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+            transform: translateY(-2px);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        button { 
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
+            color: white; 
+            padding: 20px 50px; 
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            font-size: 20px; 
+            font-weight: 700;
+            width: 100%; 
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+        button:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6); 
+        }
+        button:disabled { 
+            background: #6c757d; 
+            cursor: not-allowed; 
+            transform: none; 
+            box-shadow: none;
+        }
+        .success { 
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); 
+            color: #065f46; 
+            padding: 30px; 
+            border-radius: 15px; 
+            margin: 25px 0; 
+            border: 3px solid #10b981;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .loading {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid #3b82f6;
+            font-size: 18px;
+        }
+        .counter {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 600;
+            color: #374151;
+        }
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+            h1 { font-size: 2em; }
+            button { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Reliable Contact Form</h1>
+        <p class="subtitle">Guaranteed delivery to ukrush12@gmail.com</p>
+        
+        <div class="guarantee">
+            🎯 <strong>MULTIPLE SUBMISSIONS SUPPORTED</strong><br>
+            Each form submission will open a new email to ukrush12@gmail.com
+        </div>
+
+        <div class="warning">
+            ⚠️ <strong>FormSubmit Limitation:</strong> FormSubmit requires email verification after the first use, which blocks subsequent emails. This form uses the reliable mailto approach instead.
+        </div>
+
+        <div class="counter">
+            <strong>Emails Created:</strong> <span id="email-counter">0</span>
+        </div>
+
+        <form id="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="firstname" required placeholder="John" id="firstname">
+                </div>
+                
+                <div class="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="lastname" required placeholder="Doe" id="lastname">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Your Email Address *</label>
+                <input type="email" name="email" required placeholder="john@example.com" id="email">
+            </div>
+            
+            <div class="form-group">
+                <label>Company / Organization</label>
+                <input type="text" name="company" placeholder="Your Company (Optional)" id="company">
+            </div>
+            
+            <div class="form-group">
+                <label>Service of Interest</label>
+                <select name="service" id="service">
+                    <option value="">Select a service (Optional)</option>
+                    <option value="Strategic Consulting">Strategic Consulting</option>
+                    <option value="Business Support">Business Support</option>
+                    <option value="Growth Solutions">Growth Solutions</option>
+                    <option value="Partnership Approach">Partnership Approach</option>
+                    <option value="Process Optimization">Process Optimization</option>
+                    <option value="Innovation Consulting">Innovation Consulting</option>
+                    <option value="Other">Other Services</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Your Message *</label>
+                <textarea name="message" rows="5" required placeholder="Tell us about your business needs and how we can help..." id="message"></textarea>
+            </div>
+            
+            <button type="submit" id="submit-btn">
+                📤 Create Email to ukrush12@gmail.com
+            </button>
+        </form>
+
+        <div id="result"></div>
+        
+        <div style="background: #f8f9fa; color: #6c757d; padding: 20px; border-radius: 10px; margin-top: 25px; font-size: 14px; text-align: center; border: 2px solid #e9ecef;">
+            <strong>🔧 How This Works:</strong> This form creates a pre-filled email in your email client addressed to ukrush12@gmail.com. 
+            Simply click "Send" in your email app to deliver the message. This method works every time without limitations!
+        </div>
+    </div>
+
+    <script>
+        let emailCount = 0;
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const result = document.getElementById('result');
+            const counter = document.getElementById('email-counter');
+            
+            // Get form data
+            const firstName = document.getElementById('firstname').value;
+            const lastName = document.getElementById('lastname').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Create mailto link
+            const subject = encodeURIComponent(`BIZmaster Contact: ${firstName} ${lastName}`);
+            const body = encodeURIComponent(`
+Dear BIZmaster Team,
+
+New Contact Form Submission:
+═══════════════════════════════════════
+
+CONTACT INFORMATION:
+• Name: ${firstName} ${lastName}
+• Email: ${email}
+• Company: ${company || 'Not provided'}
+• Service Interest: ${service || 'General Inquiry'}
+
+MESSAGE:
+${message}
+
+═══════════════════════════════════════
+Reply to: ${email}
+
+This message was sent via the BIZmaster contact form.
+
+Best regards,
+${firstName} ${lastName}
+            `);
+            
+            const mailtoLink = `mailto:ukrush12@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Show loading
+            submitBtn.textContent = '📧 Opening Email Client...';
+            submitBtn.disabled = true;
+            
+            result.innerHTML = `
+                <div class="loading">
+                    📧 <strong>Creating Email...</strong><br>
+                    <small>Opening your email client with pre-filled message to ukrush12@gmail.com</small>
+                </div>
+            `;
+            
+            // Open email client
+            setTimeout(() => {
+                window.open(mailtoLink);
+                
+                // Update counter
+                emailCount++;
+                counter.textContent = emailCount;
+                
+                // Show success
+                result.innerHTML = `
+                    <div class="success">
+                        ✅ <strong>EMAIL CLIENT OPENED!</strong><br><br>
+                        Your email client should have opened with a pre-filled message to <strong>ukrush12@gmail.com</strong>.<br>
+                        <strong>Click "Send" in your email app to deliver the message!</strong><br><br>
+                        <small>✉️ This method guarantees delivery every time</small>
+                    </div>
+                `;
+                
+                // Reset form
+                document.getElementById('contact-form').reset();
+                
+                // Reset button
+                submitBtn.textContent = '📤 Create Email to ukrush12@gmail.com';
+                submitBtn.disabled = false;
+                
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

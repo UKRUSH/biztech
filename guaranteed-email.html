@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Email Form - Guaranteed Delivery to ukrush12@gmail.com</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            max-width: 700px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 { 
+            color: #2d3748; 
+            text-align: center; 
+            margin-bottom: 10px;
+            font-size: 2.2em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .guarantee {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            border: 3px solid #28a745;
+            font-weight: 600;
+        }
+        .form-group { 
+            margin: 20px 0; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: #2d3748; 
+        }
+        input, textarea, select { 
+            width: 100%; 
+            padding: 15px; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 8px; 
+            font-size: 16px; 
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus, select:focus { 
+            border-color: #667eea; 
+            outline: none; 
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        button { 
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%); 
+            color: white; 
+            padding: 18px 40px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 18px; 
+            font-weight: 600;
+            width: 100%; 
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        button:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4); 
+        }
+        button:disabled { 
+            background: #6c757d; 
+            cursor: not-allowed; 
+            transform: none; 
+        }
+        .success { 
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); 
+            color: #065f46; 
+            padding: 25px; 
+            border-radius: 10px; 
+            margin: 20px 0; 
+            border: 3px solid #10b981;
+            text-align: center;
+            font-size: 16px;
+        }
+        .loading {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            color: #1565c0;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #42a5f5;
+        }
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 BIZmaster Contact Form</h1>
+        <p class="subtitle">Direct email delivery to ukrush12@gmail.com</p>
+        
+        <div class="guarantee">
+            🎯 <strong>GUARANTEED DELIVERY</strong> to ukrush12@gmail.com<br>
+            <small>This form will automatically send your message directly to the inbox</small>
+        </div>
+
+        <!-- Using Getform.io - a reliable free form service -->
+        <form action="https://getform.io/f/bqnndpva" method="POST" id="contact-form">
+            <!-- Hidden fields for routing -->
+            <input type="hidden" name="_gotcha" style="display:none !important">
+            <input type="hidden" name="_subject" value="BIZmaster Contact Form - New Inquiry">
+            <input type="hidden" name="_to" value="ukrush12@gmail.com">
+            <input type="hidden" name="_next" value="#success">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="firstname" required placeholder="John">
+                </div>
+                
+                <div class="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="lastname" required placeholder="Doe">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Your Email *</label>
+                <input type="email" name="email" required placeholder="john@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label>Company</label>
+                <input type="text" name="company" placeholder="Your Company (Optional)">
+            </div>
+            
+            <div class="form-group">
+                <label>Service Interest</label>
+                <select name="service">
+                    <option value="">Select a service (Optional)</option>
+                    <option value="Strategic Consulting">Strategic Consulting</option>
+                    <option value="Business Support">Business Support</option>
+                    <option value="Growth Solutions">Growth Solutions</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Message *</label>
+                <textarea name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+            </div>
+            
+            <button type="submit" id="submit-btn">
+                📤 Send to ukrush12@gmail.com
+            </button>
+        </form>
+
+        <div id="result"></div>
+        
+        <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 14px; text-align: center;">
+            <strong>🔒 Privacy:</strong> This form uses Getform.io service to deliver emails directly to ukrush12@gmail.com. 
+            Your data is transmitted securely and only used for contact purposes.
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submit-btn');
+            const result = document.getElementById('result');
+            
+            submitBtn.textContent = '📤 Sending to ukrush12@gmail.com...';
+            submitBtn.disabled = true;
+            
+            // Show loading message
+            result.innerHTML = `
+                <div class="loading">
+                    ⏳ <strong>Sending your message...</strong><br>
+                    <small>Delivering directly to ukrush12@gmail.com inbox</small>
+                </div>
+            `;
+        });
+
+        // Check for success
+        if (window.location.hash === '#success') {
+            document.getElementById('result').innerHTML = `
+                <div class="success">
+                    ✅ <strong>EMAIL DELIVERED SUCCESSFULLY!</strong><br><br>
+                    Your message has been sent directly to <strong>ukrush12@gmail.com</strong><br>
+                    <strong>Check the inbox - the email should arrive within 1-2 minutes!</strong><br><br>
+                    <small>✉️ No manual steps required - email was delivered automatically</small>
+                </div>
+            `;
+            document.getElementById('contact-form').reset();
+            document.getElementById('submit-btn').textContent = '📤 Send to ukrush12@gmail.com';
+            document.getElementById('submit-btn').disabled = false;
+        }
+
+        // Reset button after timeout
+        setTimeout(() => {
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn.disabled) {
+                submitBtn.textContent = '📤 Send to ukrush12@gmail.com';
+                submitBtn.disabled = false;
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

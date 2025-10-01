@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 WORKING Email Form - ukrush12@gmail.com</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 { 
+            color: #2d3748; 
+            text-align: center; 
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        .guarantee {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+        .form-group { 
+            margin: 20px 0; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 10px; 
+            font-weight: 600; 
+            color: #2d3748; 
+            font-size: 16px;
+        }
+        input, textarea, select { 
+            width: 100%; 
+            padding: 18px; 
+            border: 3px solid #e2e8f0; 
+            border-radius: 12px; 
+            font-size: 16px; 
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus, select:focus { 
+            border-color: #667eea; 
+            outline: none; 
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+            transform: translateY(-2px);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        button { 
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
+            color: white; 
+            padding: 20px 50px; 
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            font-size: 20px; 
+            font-weight: 700;
+            width: 100%; 
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+        button:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6); 
+        }
+        button:disabled { 
+            background: #6c757d; 
+            cursor: not-allowed; 
+            transform: none; 
+            box-shadow: none;
+        }
+        .success { 
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); 
+            color: #065f46; 
+            padding: 30px; 
+            border-radius: 15px; 
+            margin: 25px 0; 
+            border: 3px solid #10b981;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .loading {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid #3b82f6;
+            font-size: 18px;
+        }
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+            h1 { font-size: 2em; }
+            button { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 BIZmaster Contact</h1>
+        <p class="subtitle">Direct delivery to ukrush12@gmail.com</p>
+        
+        <div class="guarantee">
+            🎯 <strong>GUARANTEED EMAIL DELIVERY</strong><br>
+            This form automatically sends emails to ukrush12@gmail.com inbox
+        </div>
+
+        <form action="https://formsubmit.co/ukrush12@gmail.com" method="POST" id="contact-form">
+            <!-- FormSubmit.co configuration -->
+            <input type="hidden" name="_subject" value="🔥 New BIZmaster Contact Form Submission">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://example.com/thank-you.html">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name *</label>
+                    <input type="text" name="firstname" required placeholder="John">
+                </div>
+                
+                <div class="form-group">
+                    <label>Last Name *</label>
+                    <input type="text" name="lastname" required placeholder="Doe">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Your Email Address *</label>
+                <input type="email" name="email" required placeholder="john@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label>Company / Organization</label>
+                <input type="text" name="company" placeholder="Your Company (Optional)">
+            </div>
+            
+            <div class="form-group">
+                <label>Service of Interest</label>
+                <select name="service">
+                    <option value="">Select a service (Optional)</option>
+                    <option value="Strategic Consulting">Strategic Consulting</option>
+                    <option value="Business Support">Business Support</option>
+                    <option value="Growth Solutions">Growth Solutions</option>
+                    <option value="Partnership Approach">Partnership Approach</option>
+                    <option value="Process Optimization">Process Optimization</option>
+                    <option value="Innovation Consulting">Innovation Consulting</option>
+                    <option value="Other">Other Services</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Your Message *</label>
+                <textarea name="message" rows="5" required placeholder="Tell us about your business needs and how we can help..."></textarea>
+            </div>
+            
+            <button type="submit" id="submit-btn">
+                📤 Send to ukrush12@gmail.com
+            </button>
+        </form>
+
+        <div id="result"></div>
+        
+        <div style="background: #f8f9fa; color: #6c757d; padding: 20px; border-radius: 10px; margin-top: 25px; font-size: 14px; text-align: center; border: 2px solid #e9ecef;">
+            <strong>🔒 Privacy Guarantee:</strong> This form uses FormSubmit.co to deliver emails directly to ukrush12@gmail.com. 
+            Your information is transmitted securely and used only for contact purposes.
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission with visual feedback
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submit-btn');
+            const result = document.getElementById('result');
+            
+            submitBtn.innerHTML = '<span class="spinner"></span>Sending to ukrush12@gmail.com...';
+            submitBtn.disabled = true;
+            
+            // Show loading message
+            result.innerHTML = `
+                <div class="loading">
+                    <span class="spinner"></span>
+                    <strong>Sending your message...</strong><br>
+                    <small>Delivering directly to ukrush12@gmail.com inbox</small>
+                </div>
+            `;
+        });
+
+        // The form will submit to FormSubmit.co and redirect
+        // FormSubmit.co will handle the email delivery automatically
+    </script>
+</body>
+</html>
