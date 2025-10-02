@@ -2,7 +2,26 @@
   publish = "dist"
   command = "npm run build"
 
+[build.environment]
+  NODE_VERSION = "20"
+
 [[redirects]]
   from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/about"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services" 
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
   to = "/index.html"
   status = 200
