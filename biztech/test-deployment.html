@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Deployment</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .test-links { margin: 20px 0; }
+        .test-links a { 
+            display: block; 
+            margin: 10px 0; 
+            padding: 10px; 
+            background: #007bff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px;
+        }
+        .test-links a:hover { background: #0056b3; }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Netlify Deployment Test</h1>
+        
+        <p>If you can see this page, the basic deployment is working.</p>
+        
+        <div class="test-links">
+            <h3>Test these links:</h3>
+            <a href="/" target="_blank">Home Page (/)</a>
+            <a href="/about" target="_blank">About Page (/about)</a>
+            <a href="/services" target="_blank">Services Page (/services)</a>
+            <a href="/contact" target="_blank">Contact Page (/contact)</a>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #e9ecef; border-radius: 5px;">
+            <h4>🔍 Debug Information:</h4>
+            <p><strong>Current URL:</strong> <span id="currentUrl"></span></p>
+            <p><strong>Base URL:</strong> <span id="baseUrl"></span></p>
+            <p><strong>Deployment Status:</strong> <span class="success">✅ Basic deployment working</span></p>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 15px; background: #d4edda; border-radius: 5px;">
+            <h4>📋 Instructions:</h4>
+            <ol>
+                <li>Test each link above</li>
+                <li>If links work → React Router is configured correctly</li>
+                <li>If links show 404 → _redirects file issue</li>
+                <li>Replace this test file with your React app</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('currentUrl').textContent = window.location.href;
+        document.getElementById('baseUrl').textContent = document.querySelector('base')?.href || 'No base tag found';
+    </script>
+</body>
+</html>
