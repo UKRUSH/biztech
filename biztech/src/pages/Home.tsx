@@ -1,23 +1,40 @@
 // Enhanced Home Page with Animations
 function HeroSection() {
   return (
-    <section className="hero">
-      <div className="container">
-        <h1 className="animate-fadeInUp">Focus on Your Vision. We'll Handle the Rest.</h1>
-        <p className="hero-subtitle animate-fadeInUp animate-delay-200">WE ASSIST YOUR GROWTH</p>
-        <p className="animate-fadeInUp animate-delay-400">
-          Expert business solutions, strategic consulting, and comprehensive support 
-          that frees up your time and fuels your growth. Discover your perfect business 
-          partner with our proven track record.
-        </p>
-        <div className="hero-buttons animate-fadeInUp animate-del</div>ay-600">
-          <a href="#contact" className="btn btn-primary">
-            Start Your Free Consultation
-          </a>
-          <a href="#services" className="btn btn-secondary">
-            View Our Services
-          </a>
-        </div>
+    <section className="hero" style={{
+      backgroundImage: 'url("/business-meeting-office.jpg")', // Updated image path
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      position: 'relative',
+      padding: '100px 0',
+      color: '#fff', // Changed to white
+    }}>
+      <div style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(75, 76, 76, 0.5)',
+      }} />
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="hero-content">
+      <h1 className="animate-fadeInUp" style={{ color: 'white' }}>Focus on Your Vision. We'll Handle the Rest.</h1>
+      <p className="hero-subtitle animate-fadeInUp animate-delay-200" style={{ color: 'white' }}>WE ASSIST YOUR GROWTH</p>
+      <p className="animate-fadeInUp animate-delay-400" style={{ color: 'white' }}>
+      Expert business solutions, strategic consulting, and comprehensive support 
+      that frees up your time and fuels your growth. Discover your perfect business 
+      partner with our proven track record.
+      </p>
+      <div className="hero-buttons animate-fadeInUp animate-delay-600">
+      <a href="#contact" className="btn btn-primary">
+        Start Your Free Consultation
+      </a>
+      <a href="#services" className="btn btn-secondary">
+        View Our Services
+      </a>
+      </div>
+      </div>
       </div>
     </section>
   )
@@ -30,7 +47,13 @@ function ServicesSection() {
         <h2 className="section-title animate-scaleIn">Solutions Designed to Scale With You</h2>
         <div className="services-grid">
           <div className="service-card animate-slideUp animate-delay-100">
-            <div className="service-icon animate-float">🤝</div>
+            <div className="service-icon animate-float">
+              <img 
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=80&h=80&fit=crop&crop=center" 
+                alt="Strategic Consulting"
+                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }}
+              />
+            </div>
             <h3>Strategic Consulting</h3>
             <p>
               Dedicated professionals providing strategic guidance and business 
@@ -39,7 +62,13 @@ function ServicesSection() {
           </div>
           
           <div className="service-card animate-slideUp animate-delay-300">
-            <div className="service-icon animate-float">🛠️</div>
+            <div className="service-icon animate-float">
+              <img 
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=80&h=80&fit=crop&crop=center" 
+                alt="Business Support"
+                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }}
+              />
+            </div>
             <h3>Business Support</h3>
             <p>
               Comprehensive back-office support including administrative tasks, 
@@ -48,7 +77,13 @@ function ServicesSection() {
           </div>
           
           <div className="service-card animate-slideUp animate-delay-500">
-            <div className="service-icon animate-float">📈</div>
+            <div className="service-icon animate-float">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=80&h=80&fit=crop&crop=center" 
+                alt="Growth Solutions"
+                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }}
+              />
+            </div>
             <h3>Growth Solutions</h3>
             <p>
               Scalable business solutions designed to grow with your company 
@@ -57,38 +92,18 @@ function ServicesSection() {
           </div>
           
           <div className="service-card animate-slideUp animate-delay-700">
-            <div className="service-icon animate-float">🎯</div>
+            <div className="service-icon animate-float">
+              <img 
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=80&h=80&fit=crop&crop=center" 
+                alt="Partnership Approach"
+                style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover' }}
+              />
+            </div>
             <h3>Partnership Approach</h3>
             <p>
               Long-term partnership focused on execution and continuous 
               monitoring of your business success.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-function StatsSection() {
-  return (
-    <section className="stats-section">
-      <div className="container">
-        <div className="stats-grid">
-          <div className="stat-item animate-scaleIn animate-delay-100">
-            <h3>500+</h3>
-            <p>Projects Completed</p>
-          </div>
-          <div className="stat-item animate-scaleIn animate-delay-300">
-            <h3>98%</h3>
-            <p>Client Satisfaction</p>
-          </div>
-          <div className="stat-item animate-scaleIn animate-delay-500">
-            <h3>50+</h3>
-            <p>Expert Team Members</p>
-          </div>
-          <div className="stat-item animate-scaleIn animate-delay-700">
-            <h3>24/7</h3>
-            <p>Support Available</p>
           </div>
         </div>
       </div>
@@ -120,7 +135,6 @@ export default function Home() {
     <div className="home-page">
       <HeroSection />
       <ServicesSection />
-      <StatsSection />
       <CTASection />
     </div>
   )

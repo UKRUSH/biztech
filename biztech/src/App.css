@@ -547,11 +547,13 @@ p {
 }
 
 .hero h1 {
-  color: #1f2937;
+  color: white !important;
+  background: none !important;
+  -webkit-text-fill-color: white !important;
   margin-bottom: 2.5rem;
   animation: fadeInUp 1s ease-out;
   position: relative;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1::after {
