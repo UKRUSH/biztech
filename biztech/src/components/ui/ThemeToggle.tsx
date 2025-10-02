@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '../../contexts/ThemeContext';
+import { useTheme } from '../../hooks/useTheme';
 
 // Icon components for better performance and customization
 const SunIcon: React.FC<{ className?: string }> = ({ className = '' }) => (

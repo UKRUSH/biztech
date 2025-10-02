@@ -63,7 +63,7 @@ const WorkingContactForm: React.FC = () => {
           setIsSubmitting(false)
           return
         }
-      } catch (emailjsError) {
+      } catch {
         console.log('EmailJS not configured, trying alternative methods...')
       }
 
@@ -100,7 +100,7 @@ const WorkingContactForm: React.FC = () => {
           setIsSubmitting(false)
           return
         }
-      } catch (formspreeError) {
+      } catch {
         console.log('Formspree not configured, using email client...')
       }
 

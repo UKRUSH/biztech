@@ -1,31 +1,11 @@
-import React, { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
-
-// Theme types
-export type Theme = 'light' | 'dark' | 'system';
-export type ResolvedTheme = 'light' | 'dark';
-
-// Theme context interface
-interface ThemeContextType {
-  theme: Theme;
-  resolvedTheme: ResolvedTheme;
-  setTheme: (theme: Theme) => void;
-  toggleTheme: () => void;
-}
-
-// Create theme context
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-// Theme storage key
-const THEME_STORAGE_KEY = 'biztech-theme';
-
-// Custom hook to use theme
-export const useTheme = (): ThemeContextType => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
+import React, { useState, useEffect, type ReactNode } from 'react';
+import { 
+  ThemeContext, 
+  type Theme, 
+  type ResolvedTheme, 
+  type ThemeContextType, 
+  THEME_STORAGE_KEY 
+} from './theme';
 
 // Theme provider props
 interface ThemeProviderProps {
@@ -152,5 +132,3 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   );
 };
 
-// Export context for advanced usage
-export { ThemeContext };

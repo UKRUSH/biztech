@@ -10,7 +10,7 @@ function HeroSection() {
           that frees up your time and fuels your growth. Discover your perfect business 
           partner with our proven track record.
         </p>
-        <div className="hero-buttons animate-fadeInUp animate-delay-600">
+        <div className="hero-buttons animate-fadeInUp animate-del</div>ay-600">
           <a href="#contact" className="btn btn-primary">
             Start Your Free Consultation
           </a>
