@@ -140,8 +140,8 @@ const ContactSection: React.FC = () => {
     {
       icon: "📞",
       title: "Call Us", 
-      info: "+1 (555) 123-4567",
-      subInfo: "+1 (555) 987-6543"
+      info: "+94 77 796 0231",
+      subInfo: "+94 77 796 0231"
     },
     {
       icon: "📍",

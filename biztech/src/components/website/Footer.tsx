@@ -13,7 +13,10 @@ export const Footer = () => {
             
             <div className="footer-social">
               <a href="https://www.linkedin.com/company/bizmaster-solutions/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
+                💼 LinkedIn
+              </a>
+              <a href="https://www.facebook.com/BIZmaster.Solutions/" target="_blank" rel="noopener noreferrer">
+                📘 Facebook
               </a>
             </div>
           </div>
@@ -41,9 +44,9 @@ export const Footer = () => {
           <div className="footer-section">
             <h3>Contact</h3>
             <div className="contact-info">
-              <p> contact@bizmaster-solutions.com</p>
-              <p> +1 (555) 123-4567</p>
-              <p> Business District, City</p>
+              <p>📧 contact@bizmaster-solutions.com</p>
+              <p>📞 +94 77 796 0231</p>
+              <p>📍 231/A Athurugiriya Road, Malabe</p>
             </div>
           </div>
         </div>

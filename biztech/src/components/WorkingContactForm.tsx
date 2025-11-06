@@ -322,7 +322,7 @@ ${formData.firstName} ${formData.lastName}
               style={{
                 background: isSubmitting 
                   ? '#ccc' 
-                  : 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)',
+                  : 'linear-gradient(135deg, #a904e8 0%, #b520f0 100%)',
                 color: 'white',
                 padding: '15px 30px',
                 border: 'none',

@@ -1,5 +1,7 @@
-﻿// Enhanced Contact Page with Animations and Email Functionality
+// Enhanced Contact Page with Animations and Email Functionality
 import { useState } from 'react'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function ContactHeroSection() {
   return (
@@ -28,7 +30,7 @@ function ContactInfoSection() {
             <p style={{ marginBottom: '1rem' }}>
               Send us an email and we'll respond within 24 hours.
             </p>
-            <p style={{ color: '#7c3aed', fontWeight: '600' }}>
+            <p style={{ color: '#a904e8', fontWeight: '600' }}>
               contact@bizmaster-solutions.com
             </p>
           </div>
@@ -39,8 +41,8 @@ function ContactInfoSection() {
             <p style={{ marginBottom: '1rem' }}>
               Speak directly with our business consulting experts.
             </p>
-            <p style={{ color: '#7c3aed', fontWeight: '600' }}>
-              +1 (555) 123-4567
+            <p style={{ color: '#a904e8', fontWeight: '600' }}>
+              +94 77 796 0231
             </p>
           </div>
           
@@ -50,8 +52,8 @@ function ContactInfoSection() {
             <p style={{ marginBottom: '1rem' }}>
               Schedule an in-person meeting at our office.
             </p>
-            <p style={{ color: '#7c3aed', fontWeight: '600' }}>
-              Business District, City
+            <p style={{ color: '#a904e8', fontWeight: '600' }}>
+              231/A Athurugiriya Road,Malabe
             </p>
           </div>
           
@@ -61,7 +63,7 @@ function ContactInfoSection() {
             <p style={{ marginBottom: '1rem' }}>
               Connect with us on professional social media.
             </p>
-            <a href="https://www.linkedin.com/company/bizmaster-solutions/" target="_blank" rel="noopener noreferrer" style={{ color: '#7c3aed', fontWeight: '600', textDecoration: 'none' }}>
+            <a href="https://www.linkedin.com/company/bizmaster-solutions/" target="_blank" rel="noopener noreferrer" style={{ color: '#a904e8', fontWeight: '600', textDecoration: 'none' }}>
               Follow Us on LinkedIn
             </a>
           </div>
@@ -90,18 +92,18 @@ Subject: BIZmaster Contact: ${formData.firstName} ${formData.lastName}
 Dear BIZmaster Team,
 
 Contact Form Submission:
-═══════════════════════════════════════
+---------------------------------------
 
 CONTACT INFORMATION:
-• Name: ${formData.firstName} ${formData.lastName}
-• Email: ${formData.email}
-• Company: ${formData.company || 'Not provided'}
-• Service Interest: ${formData.service || 'General Inquiry'}
+👤 Name: ${formData.firstName} ${formData.lastName}
+📧 Email: ${formData.email}
+🏢 Company: ${formData.company || 'Not provided'}
+🔧 Service Interest: ${formData.service || 'General Inquiry'}
 
 MESSAGE:
 ${formData.message}
 
-═══════════════════════════════════════
+---------------------------------------
 Reply to: ${formData.email}
 
 This message was sent via the BIZmaster contact form.
@@ -155,7 +157,14 @@ ${formData.firstName} ${formData.lastName}`
 
       if (response.ok) {
         console.log('✅ Email sent successfully via FormSubmit.co')
-        setSubmitStatus('success')
+        toast.success('Email sent successfully! Message delivered to ukrush12@gmail.com', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        })
         setIsSubmitting(false)
         
         // Reset form after successful submission
@@ -195,7 +204,14 @@ ${formData.firstName} ${formData.lastName}`
 
         if (getformResponse.ok) {
           console.log('✅ Email sent successfully via Getform.io')
-          setSubmitStatus('success')
+          toast.success('Email sent successfully! Message delivered to ukrush12@gmail.com', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          })
           setIsSubmitting(false)
           
           // Reset form
@@ -245,7 +261,14 @@ ${formData.firstName} ${formData.lastName}`
         document.body.appendChild(form)
         form.submit()
         
-        setSubmitStatus('success')
+        toast.success('Email sent successfully! Message delivered to ukrush12@gmail.com', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        })
         setIsSubmitting(false)
         
         // Reset form
@@ -352,73 +375,6 @@ ${formData.firstName} ${formData.lastName}`
               />
             </div>
 
-            {submitStatus === 'success' && (
-              <div style={{ 
-                padding: '1.5rem', 
-                backgroundColor: '#059669', 
-                color: 'white', 
-                borderRadius: '12px', 
-                textAlign: 'center',
-                animation: 'fadeIn 0.5s ease',
-                border: '2px solid #10b981',
-                boxShadow: '0 4px 12px rgba(16, 185, 129, 0.3)'
-              }}>
-                ✅ <strong>Email Sent Successfully!</strong> 
-                <br/><br/>
-                <strong>Your message has been delivered to ukrush12@gmail.com!</strong>
-                <br/><br/>
-                <div style={{
-                  background: 'rgba(255,255,255,0.2)',
-                  padding: '15px',
-                  borderRadius: '8px',
-                  marginBottom: '15px'
-                }}>
-                  <strong>📧 Delivery Status:</strong><br/>
-                  ✅ Email sent automatically<br/>
-                  ✅ Should arrive within 1-2 minutes<br/>
-                  ✅ Check ukrush12@gmail.com inbox
-                </div>
-                
-                <button 
-                  type="button"
-                  onClick={copyEmailToClipboard}
-                  style={{
-                    background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
-                    color: 'white',
-                    border: 'none',
-                    padding: '12px 24px',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    fontSize: '16px',
-                    fontWeight: 'bold',
-                    marginBottom: '15px',
-                    boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-                  onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                >
-                  📋 Copy Backup Email Content
-                </button>
-                <br/>
-                <strong>Backup Method:</strong> Copy email content above if needed
-                <br/>
-                <strong>Target:</strong> ukrush12@gmail.com
-                <br/>
-                3️⃣ <strong>Then paste your copied content and send!</strong>
-                <br/><br/>
-                <strong>Alternative methods:</strong>
-                <br/>
-                • Set up Outlook/Thunderbird as default email app
-                <br/>
-                • Compose directly in Gmail web interface
-                <br/>
-                <small style={{ opacity: '0.9', fontSize: '0.85em', marginTop: '10px', display: 'block' }}>
-                  📧 Click the button above to copy everything - then just paste and send!
-                </small>
-              </div>
-            )}
-
             {submitStatus === 'error' && (
               <div style={{ 
                 padding: '1.5rem', 
@@ -467,19 +423,19 @@ function WhyContactUsSection() {
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
           <div style={{ display: 'grid', gap: '2.5rem' }}>
             <div className="animate-slideInLeft">
-              <h3 style={{ color: '#7c3aed', marginBottom: '0.75rem', fontSize: '1.375rem' }}>✓ Free Initial Consultation</h3>
+              <h3 style={{ color: '#a904e8', marginBottom: '0.75rem', fontSize: '1.375rem' }}>✅ Free Initial Consultation</h3>
               <p style={{ fontSize: '1.125rem', lineHeight: '1.7' }}>Get expert advice and understand how we can help your business grow.</p>
             </div>
             <div className="animate-slideInRight animate-delay-200">
-              <h3 style={{ color: '#7c3aed', marginBottom: '0.75rem', fontSize: '1.375rem' }}>✓ Customized Solutions</h3>
+              <h3 style={{ color: '#a904e8', marginBottom: '0.75rem', fontSize: '1.375rem' }}>✅ Customized Solutions</h3>
               <p style={{ fontSize: '1.125rem', lineHeight: '1.7' }}>Every business is unique. We tailor our services to your specific needs.</p>
             </div>
             <div className="animate-slideInLeft animate-delay-400">
-              <h3 style={{ color: '#7c3aed', marginBottom: '0.75rem', fontSize: '1.375rem' }}>✓ Proven Track Record</h3>
+              <h3 style={{ color: '#a904e8', marginBottom: '0.75rem', fontSize: '1.375rem' }}>✅ Proven Track Record</h3>
               <p style={{ fontSize: '1.125rem', lineHeight: '1.7' }}>Over 500 successful projects with 98% client satisfaction rate.</p>
             </div>
             <div className="animate-slideInRight animate-delay-600">
-              <h3 style={{ color: '#7c3aed', marginBottom: '0.75rem', fontSize: '1.375rem' }}>✓ Ongoing Support</h3>
+              <h3 style={{ color: '#a904e8', marginBottom: '0.75rem', fontSize: '1.375rem' }}>✅ Ongoing Support</h3>
               <p style={{ fontSize: '1.125rem', lineHeight: '1.7' }}>We're committed to your long-term success with continuous guidance.</p>
             </div>
           </div>
@@ -496,6 +452,19 @@ export default function Contact() {
       <ContactInfoSection />
       <ContactFormSection />
       <WhyContactUsSection />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        style={{ top: '120px' }}
+      />
     </div>
   )
 }
