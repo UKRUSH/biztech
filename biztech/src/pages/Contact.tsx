@@ -85,42 +85,6 @@ function ContactFormSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  const copyEmailToClipboard = async () => {
-    const emailText = `To: ukrush12@gmail.com
-Subject: BIZmaster Contact: ${formData.firstName} ${formData.lastName}
-
-Dear BIZmaster Team,
-
-Contact Form Submission:
----------------------------------------
-
-CONTACT INFORMATION:
-👤 Name: ${formData.firstName} ${formData.lastName}
-📧 Email: ${formData.email}
-🏢 Company: ${formData.company || 'Not provided'}
-🔧 Service Interest: ${formData.service || 'General Inquiry'}
-
-MESSAGE:
-${formData.message}
-
----------------------------------------
-Reply to: ${formData.email}
-
-This message was sent via the BIZmaster contact form.
-
-Best regards,
-${formData.firstName} ${formData.lastName}`
-
-    try {
-      await navigator.clipboard.writeText(emailText)
-      alert('📋 Email content copied! Paste into your email client and send to ukrush12@gmail.com')
-    } catch (err) {
-      console.error('Failed to copy:', err)
-      // Fallback: show the content in an alert
-      alert(`Copy this content and send to ukrush12@gmail.com:\n\n${emailText}`)
-    }
-  }
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
