@@ -98,30 +98,30 @@ function ContactFormSection() {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-    console.log('📧 Sending email to ukrush12@gmail.com...')
+    console.log('📧 Sending message to ukrush12@gmail.com via BIZmaster backend...')
 
     try {
-      // Method 1: FormSubmit.co - Most reliable service
-      const formSubmitData = new FormData()
-      formSubmitData.append('name', `${formData.firstName} ${formData.lastName}`)
-      formSubmitData.append('email', formData.email)
-      formSubmitData.append('company', formData.company || 'Not provided')
-      formSubmitData.append('service', formData.service || 'General Inquiry')
-      formSubmitData.append('message', formData.message)
-      formSubmitData.append('_subject', `BIZmaster Contact: ${formData.firstName} ${formData.lastName}`)
-      formSubmitData.append('_captcha', 'false')
-      formSubmitData.append('_template', 'box')
-
-      console.log('🔄 Trying FormSubmit.co...')
-      
-      const response = await fetch('https://formsubmit.co/ukrush12@gmail.com', {
+      // Send to your nodemailer backend server
+      const backendResponse = await fetch('http://localhost:3002/api/contact', {
         method: 'POST',
-        body: formSubmitData
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message
+        })
       })
 
-      if (response.ok) {
-        console.log('✅ Email sent successfully via FormSubmit.co')
-        toast.success('Email sent successfully! Message delivered to ukrush12@gmail.com', {
+      const result = await backendResponse.json()
+
+      if (backendResponse.ok && result.success) {
+        console.log('✅ Message sent successfully via BIZmaster backend')
+        toast.success('Message sent successfully! We will get back to you soon.', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -129,7 +129,6 @@ function ContactFormSection() {
           pauseOnHover: true,
           draggable: true,
         })
-        setIsSubmitting(false)
         
         // Reset form after successful submission
         setFormData({
@@ -140,43 +139,37 @@ function ContactFormSection() {
           service: '',
           message: ''
         })
-        return
+        setSubmitStatus('success')
       } else {
-        throw new Error('FormSubmit failed')
+        throw new Error(result.error || 'Backend server error')
       }
     } catch (error) {
-      console.log('❌ FormSubmit.co failed:', error)
+      console.error('❌ Backend server failed:', error)
       
+      // Fallback to FormSubmit.co if backend is not available
       try {
-        // Method 2: Getform.io backup
-        console.log('🔄 Trying Getform.io backup...')
+        console.log('🔄 Trying FormSubmit.co fallback...')
         
-        const getformResponse = await fetch('https://getform.io/f/bpjjjera', {
+        const formSubmitData = new FormData()
+        formSubmitData.append('name', `${formData.firstName} ${formData.lastName}`)
+        formSubmitData.append('email', formData.email)
+        formSubmitData.append('company', formData.company || 'Not provided')
+        formSubmitData.append('service', formData.service || 'General Inquiry')
+        formSubmitData.append('message', formData.message)
+        formSubmitData.append('_subject', `BIZmaster Contact: ${formData.firstName} ${formData.lastName}`)
+        formSubmitData.append('_captcha', 'false')
+        
+        const fallbackResponse = await fetch('https://formsubmit.co/ukrush12@gmail.com', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            name: `${formData.firstName} ${formData.lastName}`,
-            email: formData.email,
-            company: formData.company || 'Not provided',
-            service: formData.service || 'General Inquiry',
-            message: formData.message,
-            to: 'ukrush12@gmail.com'
-          })
+          body: formSubmitData
         })
 
-        if (getformResponse.ok) {
-          console.log('✅ Email sent successfully via Getform.io')
-          toast.success('Email sent successfully! Message delivered to ukrush12@gmail.com', {
+        if (fallbackResponse.ok) {
+          console.log('✅ Email sent successfully via FormSubmit.co fallback')
+          toast.success('Message sent successfully! We will get back to you soon.', {
             position: "top-right",
             autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
           })
-          setIsSubmitting(false)
           
           // Reset form
           setFormData({
@@ -187,66 +180,20 @@ function ContactFormSection() {
             service: '',
             message: ''
           })
-          return
+          setSubmitStatus('success')
         } else {
-          throw new Error('Getform failed')
+          throw new Error('Fallback service also failed')
         }
-      } catch (getformError) {
-        console.log('❌ Getform.io failed:', getformError)
-        
-        // Method 3: Direct HTML form submission to FormSubmit
-        console.log('🔄 Using direct form submission...')
-        
-        // Create hidden form and submit it
-        const form = document.createElement('form')
-        form.action = 'https://formsubmit.co/ukrush12@gmail.com'
-        form.method = 'POST'
-        form.style.display = 'none'
-        
-        // Add form data
-        const fields = {
-          name: `${formData.firstName} ${formData.lastName}`,
-          email: formData.email,
-          company: formData.company || 'Not provided',
-          service: formData.service || 'General Inquiry',
-          message: formData.message,
-          _subject: `BIZmaster Contact: ${formData.firstName} ${formData.lastName}`,
-          _captcha: 'false'
-        }
-        
-        Object.entries(fields).forEach(([key, value]) => {
-          const input = document.createElement('input')
-          input.type = 'hidden'
-          input.name = key
-          input.value = value
-          form.appendChild(input)
-        })
-        
-        document.body.appendChild(form)
-        form.submit()
-        
-        toast.success('Email sent successfully! Message delivered to ukrush12@gmail.com', {
+      } catch (fallbackError) {
+        console.error('❌ All email services failed:', fallbackError)
+        setSubmitStatus('error')
+        toast.error('Unable to send message. Please try again or contact us directly at ukrush12@gmail.com', {
           position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+          autoClose: 8000,
         })
-        setIsSubmitting(false)
-        
-        // Reset form
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          company: '',
-          service: '',
-          message: ''
-        })
-        
-        console.log('✅ Direct form submission executed')
       }
+    } finally {
+      setIsSubmitting(false)
     }
   }
 

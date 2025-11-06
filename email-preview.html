@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIZmaster Email Preview - Simple & Attractive Style</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #333;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        .preview-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .preview-header {
+            background: #a904e8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .preview-header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .preview-content {
+            padding: 30px;
+        }
+        .email-container { 
+            max-width: 600px; 
+            margin: 20px auto; 
+            background: white; 
+            border-radius: 10px; 
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header { 
+            background: #a904e8; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center;
+        }
+        .header h1 { 
+            font-size: 24px; 
+            margin-bottom: 5px;
+        }
+        .header p { 
+            font-size: 16px; 
+            opacity: 0.9; 
+        }
+        .content { 
+            padding: 30px 25px; 
+        }
+        .info-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #a904e8;
+        }
+        .info-row { 
+            display: flex;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+        .info-row:last-child { margin-bottom: 0; }
+        .info-icon {
+            width: 30px;
+            height: 30px;
+            background: #a904e8;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+        .info-text {
+            flex: 1;
+        }
+        .info-label { 
+            font-weight: bold; 
+            color: #555;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+        .info-value { 
+            color: #333;
+            font-size: 16px;
+        }
+        .message-box {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .message-title {
+            background: #a904e8;
+            color: white;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .message-content { 
+            padding: 20px; 
+            font-size: 15px;
+            line-height: 1.6;
+            color: #444;
+        }
+        .footer { 
+            background: #333;
+            color: white;
+            text-align: center; 
+            padding: 20px;
+        }
+        .footer p {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .reply-btn {
+            display: inline-block;
+            background: #a904e8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .time-stamp {
+            text-align: center;
+            padding: 15px;
+            background: #f0f0f0;
+            color: #666;
+            font-size: 13px;
+        }
+        @media (max-width: 600px) {
+            .content { padding: 20px 15px; }
+            .info-card { padding: 15px; }
+        }
+        .features-list {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .features-list h3 {
+            color: #a904e8;
+            margin-bottom: 15px;
+        }
+        .features-list ul {
+            list-style: none;
+        }
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .features-list li:before {
+            content: "✅";
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h1>📧 BIZmaster Email Preview - New Professional Styling</h1>
+            <p>This is how your contact form emails will look with the enhanced styling</p>
+        </div>
+        
+        <div class="preview-content">
+            <div class="email-container">
+                <div class="header">
+                    <h1>✉️ New Message</h1>
+                    <p>BIZmaster Solutions</p>
+                </div>
+                
+                <div class="content">
+                    <div class="info-card">
+                        <div class="info-row">
+                            <div class="info-icon">👤</div>
+                            <div class="info-text">
+                                <div class="info-label">Name</div>
+                                <div class="info-value">John Smith</div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-icon">📧</div>
+                            <div class="info-text">
+                                <div class="info-label">Email</div>
+                                <div class="info-value">john.smith@example.com</div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-icon">🏢</div>
+                            <div class="info-text">
+                                <div class="info-label">Company</div>
+                                <div class="info-value">Tech Solutions Inc.</div>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-icon">🔧</div>
+                            <div class="info-text">
+                                <div class="info-label">Service</div>
+                                <div class="info-value">Web Development</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="message-box">
+                        <div class="message-title">
+                            💬 Message
+                        </div>
+                        <div class="message-content">
+                            Hello! I am interested in your web development services. We need a modern, responsive website for our growing tech company. Could you please provide more details about your pricing and timeline?<br><br>Best regards,<br>John
+                        </div>
+                    </div>
+                </div>
+
+                <div class="time-stamp">
+                    📅 November 6, 2025 at 3:00 PM
+                </div>
+
+                <div class="footer">
+                    <p>Contact Form Submission</p>
+                    <p>Reply directly to this email</p>
+                    <a href="mailto:john.smith@example.com" class="reply-btn">Reply to John</a>
+                </div>
+            </div>
+
+            <div class="features-list">
+                <h3>🎨 Simple & Attractive Email Features:</h3>
+                <ul>
+                    <li>Clean, simple design that's easy to read</li>
+                    <li>Attractive purple branding (#a904e8)</li>
+                    <li>Clear contact information layout</li>
+                    <li>Simple icons for quick identification</li>
+                    <li>Easy-to-read message formatting</li>
+                    <li>Mobile-friendly responsive design</li>
+                    <li>Professional but approachable styling</li>
+                    <li>One-click reply button</li>
+                    <li>Clear timestamp display</li>
+                    <li>Minimal, distraction-free layout</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
